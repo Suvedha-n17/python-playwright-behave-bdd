@@ -76,9 +76,8 @@ project-root/
 Example `behave.ini`:
 
 ```ini
-[behave:sit]
-baseUrl = https://sit.example.com
-apiUrl = https://api.sit.example.com
+[behave:qa]
+baseUrl = https://qa.example.com
 browserType = chrome
 
 [behave:uat]
