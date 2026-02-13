@@ -53,7 +53,7 @@ project-root/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/SowmyaMoturu/playwright_python_behave.git
+   git clone https://github.com/Suvedha-n17/python-playwright-behave-bdd.git
    cd playwright-python-framework
    ```
 
@@ -167,27 +167,3 @@ behave -f allure_behave.formatter:AllureFormatter -o reports/allure
 allure serve reports/allure
 ```
 
-## CI/CD Integration
-
-The repository includes a sample GitHub Actions workflow to automate test execution. Key steps include:
-
-- **Triggering Tests:** Automatically triggered on a push to the `main` branch.
-- **Environment Setup:** Installs dependencies and Playwright browsers.
-- **Test Execution:** Runs specific test suites like smoke or regression tests.
-- **Parallel Jobs:** Supports running multiple test jobs concurrently.
-
-Refer to the `.github/workflows/ci.yml` file for the complete configuration.
-
-## Features and Methodology
-
-### Trace Logs and Videos:
-- **Trace Logs:** Each scenario generates trace logs, which are stored in the `traces/` folder. These logs are in a zip file format, and you can open them in the [Playwright Trace Viewer](https://playwright.dev/docs/trace-viewer) for detailed step-by-step debugging.
-  
-- **Video Recording:** Videos of test execution are recorded and stored in the `videos/` folder. The video captures the entire browser session for each scenario, useful for debugging failures.
-
-### Screenshots:
-- Screenshots are captured on every step (if enabled) and when a scenario finishes. The screenshots are saved in the `screenshots/` directory, and you can attach them to test reports (e.g., Allure or HTML reports).
-
-## Conclusion
-
-This framework provides a modern, scalable, and maintainable way to automate browser testing using Playwright, Python, and Behave. It supports parallel test execution, CI/CD integration, and advanced debugging features like tracing, screenshots, and video recording. With multi-environment support, it’s designed to fit seamlessly into modern test automation workflows.
