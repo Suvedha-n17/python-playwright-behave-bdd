@@ -1,6 +1,6 @@
 from playwright.sync_api import Page
 
-class Base_Page:
+class BasePage:
     def __init__(self, page: Page):
         self.page = page
 
@@ -26,3 +26,7 @@ class Base_Page:
                 raise ValueError("Invalid 'by' parameter. Use 'value', 'label', or 'index'.")
         except Exception as e:
             print(f"Error selecting dropdown option '{option}' by '{by}': {e}")
+
+    def take_screenshot(self, step_name):
+        screenshot_path = f"reports/screenshots/{step_name}.png"
+        self.page.screenshot(path=screenshot_path)

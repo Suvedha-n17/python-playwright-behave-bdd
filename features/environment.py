@@ -52,13 +52,12 @@ def load_config(context):
     config = ConfigParser()
     config.read("behave.ini")
 
-    profile = f"behave:{context.config.userdata.get('profile', 'sit')}"
+    profile = f"behave:{context.config.userdata.get('profile', 'qa')}"
     if profile not in config:
         raise ValueError(f"Profile '{profile}' not found in behave.ini")
 
     section = config[profile]
     context.base_url = section.get("baseUrl")
-    context.api_url = section.get("apiUrl")
     context.browser_type = section.get("browserType", "chrome").lower()
 
     context.headless = not is_local()
